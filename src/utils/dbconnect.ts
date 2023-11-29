@@ -2,7 +2,7 @@
 import mongoose from 'mongoose'
 import config from '../app/config'
 
-const main = async () => {
+export const main = async () => {
   try {
     if (!config.db) {
       console.log('Database Not Found')
@@ -13,5 +13,3 @@ const main = async () => {
     console.log('Database Connect Problem')
   }
 }
-
-main()
