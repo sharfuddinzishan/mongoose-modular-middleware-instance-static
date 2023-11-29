@@ -1,5 +1,5 @@
 import { User } from './User.model'
-import { TUser } from './user.interface'
+import { TUser } from './User.interface'
 
 const creatUser = async (getData: TUser) => {
   const result = await User.create(getData)
