@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import express, { Application, NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import { dbconnect } from './utils/dbconnect'
