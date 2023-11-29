@@ -16,7 +16,8 @@ const UserSchema = new Schema<TUser, UserModel>({
 UserSchema.statics.generateId = async () => {
   try {
     //   let lastId = User.find().sort({ id: -1 }).limit(1).exec()
-    const lastId = await User.findOne().sort({ _id: -1 }).exec()
+    // const lastId = await User.findOne().sort({ _id: -1 }).exec()
+    const lastId = await User.findOne().sort({ id: -1 }).exec()
     if (!lastId) return 1
     return lastId.id + 1
   } catch (error) {
