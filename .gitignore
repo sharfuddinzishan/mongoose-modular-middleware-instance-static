@@ -1,2 +1,7 @@
 # Ignore npm lock file
 .env
+package-lock.json
+
+# Ignore module folder
+node_modules/
+dist/
