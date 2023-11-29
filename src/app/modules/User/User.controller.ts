@@ -49,5 +49,30 @@ const getUsersController = async (req: Request, res: Response) => {
     })
   }
 }
+const getUserByIdController = async (req: Request, res: Response) => {
+  const getUserId = req.params.userId
+  try {
+    const data = await userServices.getUserById(+getUserId)
+    if (data.length) {
+      res.send({
+        success: true,
+        message: `User Reteived`,
+        data
+      })
+    } else {
+      throw new Error('No Such User Found')
+    }
+  } catch (error: unknown) {
+    res.send({
+      success: false,
+      message: 'User Fetched Failed',
+      error
+    })
+  }
+}
 
-export const userControllers = { creatUserController, getUsersController }
+export const userControllers = {
+  creatUserController,
+  getUsersController,
+  getUserByIdController
+}
