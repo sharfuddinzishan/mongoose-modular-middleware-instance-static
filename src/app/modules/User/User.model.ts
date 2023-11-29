@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import { TUser } from './user.interface'
 
 const UserSchema = new Schema<TUser>({
@@ -11,3 +11,6 @@ const UserSchema = new Schema<TUser>({
   role: { type: String, default: 'User' },
   security: { type: String }
 })
+
+// Model From Schema
+export const User = model<TUser>('User', UserSchema)
