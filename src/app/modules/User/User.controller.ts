@@ -33,4 +33,21 @@ const creatUserController = async (req: Request, res: Response) => {
   }
 }
 
-export const userControllers = { creatUserController }
+const getUsersController = async (req: Request, res: Response) => {
+  try {
+    const data = await userServices.getUsers()
+    res.send({
+      success: true,
+      message: `${data?.length || 0} Users Reteived`,
+      data
+    })
+  } catch (error: unknown) {
+    res.send({
+      success: false,
+      message: 'Users Fetched Failed',
+      error
+    })
+  }
+}
+
+export const userControllers = { creatUserController, getUsersController }
