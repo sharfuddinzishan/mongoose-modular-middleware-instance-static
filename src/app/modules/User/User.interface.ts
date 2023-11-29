@@ -3,5 +3,5 @@ export type TUser = {
   id: string
   name: string
   role: TRole
-  security: string
+  security?: string
 }
