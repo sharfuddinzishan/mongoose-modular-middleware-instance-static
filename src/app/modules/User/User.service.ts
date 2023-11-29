@@ -2,7 +2,8 @@ import { User } from './User.model'
 import { TUser } from './User.interface'
 
 const creatUser = async (getData: TUser) => {
-  const result = await User.create(getData)
+  const id = await User.generateId()
+  const result = await User.create({ ...getData, id })
   return result
 }
 

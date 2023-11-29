@@ -7,7 +7,8 @@ export const UserZodSchema = z
         required_error: 'Unique ID Must Provided',
         invalid_type_error: 'Only Number'
       })
-      .positive({ message: 'Invalid ID' }),
+      .positive({ message: 'Invalid ID' })
+      .optional(),
     name: z
       .string()
       .min(2, 'Name Too Much Short')

@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { userServices } from './User.service'
 import { z } from 'zod'
 import { UserZodSchema } from './User.validation-zod'
+import { TUser } from './User.interface'
 
 const creatUserController = async (req: Request, res: Response) => {
   const getUserData = await req.body.user
@@ -10,7 +11,7 @@ const creatUserController = async (req: Request, res: Response) => {
     if (!parseUser.success) {
       throw parseUser.error
     }
-    const data = await userServices.creatUser(parseUser.data)
+    const data = await userServices.creatUser(parseUser.data as TUser)
     res.send({
       success: true,
       message: 'New User Created',
