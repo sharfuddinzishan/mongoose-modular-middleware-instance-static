@@ -12,7 +12,7 @@ export const UserZodSchema = z
       .string()
       .min(2, 'Name Too Much Short')
       .max(50, 'Name Too Much Long'),
-    role: z.enum(['Admin', 'User', 'Normal']),
+    role: z.enum(['Admin', 'User', 'Normal']).default('Normal'),
     security: z.string().optional()
   })
   .strict()

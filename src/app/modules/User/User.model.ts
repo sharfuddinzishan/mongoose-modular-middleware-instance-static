@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose'
-import { TUser } from './user.interface'
+import { TUser, TRole } from './user.interface'
 
 const UserSchema = new Schema<TUser>({
   id: {
@@ -8,7 +8,7 @@ const UserSchema = new Schema<TUser>({
     unique: true
   },
   name: { type: String, required: true },
-  role: { type: String, default: 'User' },
+  role: { type: String, default: 'Normal' },
   security: { type: String }
 })
 
