@@ -1,6 +1,7 @@
+export type TRole = 'Admin' | 'User' | 'Normal'
 export type TUser = {
   id: string
   name: string
-  role: boolean
+  role: TRole
   security: string
 }
