@@ -3,7 +3,7 @@ import { TUser } from './user.interface'
 
 const UserSchema = new Schema<TUser>({
   id: {
-    type: String,
+    type: Number,
     require: true,
     unique: true
   },
